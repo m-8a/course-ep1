@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { generate } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -8,7 +7,7 @@ import { generate } from "rxjs";
 })
 export class AppComponent {
   leng = 0;
-  password = " ";
+  password = "";
   includeLettersCheck = false;
   includeNumbersCheck = false;
   includeSymbolsCheck = false;
@@ -57,9 +56,6 @@ export class AppComponent {
     if (this.includeSymbolsCheck) {
       validChars += symbols;
     }
-
-    console.log("Valid chars :> ", validChars);
-
     let generatedPassword = "";
     for (let i = 0; i < this.leng; i++) {
       const index = Math.floor(Math.random() * validChars.length);
